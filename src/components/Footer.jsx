@@ -1,4 +1,7 @@
 import React from "react";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLogoFacebook } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -21,9 +24,9 @@ const Footer = () => {
           <p className="text-sm mb-3">Social Links</p>
 
           <div className="flex justify-center gap-4">
-            <a className="btn btn-circle bg-white border-none"></a>
-            <a className="btn btn-circle bg-white border-none"></a>
-            <a className="btn btn-circle bg-white border-none"></a>
+            <a className="btn btn-circle bg-white border-none"> <FaInstagram /></a>
+            <a className="btn btn-circle bg-white border-none"> <IoLogoFacebook /></a>
+            <a className="btn btn-circle bg-white border-none"><FaXTwitter /></a>
           </div>
         </div>
 

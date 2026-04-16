@@ -1,5 +1,8 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { IoMdHome } from "react-icons/io";
+import { CiTimer } from "react-icons/ci";
+import { ImStatsDots } from "react-icons/im";
 
 const Navber = () => {
   const location = useLocation();
@@ -33,14 +36,17 @@ const Navber = () => {
       <div className="flex-none gap-2">
 
         <NavLink to="/" className={getClass}>
+          <IoMdHome />
           Home
         </NavLink>
 
         <NavLink to="/Apps" className={getClass}>
+          <CiTimer />
           Timeline
         </NavLink>
 
         <NavLink to="/InstalApps" className={getClass}>
+          <ImStatsDots />
           Stats
         </NavLink>
 

@@ -1,5 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { RiAlarmWarningLine } from "react-icons/ri";
+import { LuPhoneCall } from "react-icons/lu";
 
 const AppDetails = () => {
   const { id } = useParams();
@@ -160,13 +162,13 @@ const AppDetails = () => {
 
               <button
                 onClick={() => handleClick("call")}
-                className={`p-4 rounded transition-all duration-200
-                  ${activeBtn === "call"
-                    ? " scale-95"
-                    : "bg-gray-100 hover:bg-gray-200 hover:scale-105"
+                className={`p-4 rounded transition-all duration-200 flex items-center justify-center gap-2
+                 ${activeBtn === "call"
+                    ? "scale-95"
+                    : "bg-gray-100 hover:bg-gray-200 hover:-translate-y-1 hover:shadow-md"
                   }`}
               >
-                📞 Call
+                <LuPhoneCall /> Call
               </button>
 
               <button
