@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <section className="bg-blue-50 md:py-16 px-4 min-h-screen">
+    <section className="bg-blue-50 md:py-16 px-4">
 
       <div className="max-w-6xl mx-auto text-center">
 
@@ -14,34 +14,39 @@ const Banner = () => {
           Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.
         </p>
 
-        <button className="btn bg-[#1d4336] hover:bg-[#153229] text-white border-none px-6 md:px-8 mb-10">
-          <span className="text-lg md:text-xl">+</span> Add a Friend
-        </button>
+        {/* ✅ FIXED BUTTON (no extra margin) */}
+        <div className="mb-6">
+          <button className="btn bg-[#1d4336] hover:bg-[#153229] text-white border-none px-6 md:px-8">
+            <span className="text-lg md:text-xl">+</span> Add a Friend
+          </button>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
 
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border">
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm ">
             <h2 className="text-2xl md:text-4xl font-bold text-[#244D3F]">10</h2>
             <p className="text-sm md:text-base text-slate-500">Total Friends</p>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border">
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm ">
             <h2 className="text-2xl md:text-4xl font-bold text-[#244D3F]">3</h2>
             <p className="text-sm md:text-base text-slate-500">On Track</p>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border">
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm ">
             <h2 className="text-2xl md:text-4xl font-bold text-[#244D3F]">6</h2>
             <p className="text-sm md:text-base text-slate-500">Need Attention</p>
           </div>
 
-          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm border">
+          <div className="bg-white p-6 md:p-8 rounded-xl shadow-sm ">
             <h2 className="text-2xl md:text-4xl font-bold text-[#244D3F]">12</h2>
             <p className="text-sm md:text-base text-slate-500">Interactions This Month</p>
           </div>
 
         </div>
+
       </div>
+
     </section>
   );
 };

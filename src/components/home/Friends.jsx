@@ -13,11 +13,11 @@ const Friends = () => {
   }, []);
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 mb-8 bg-gray-50 min-h-screen max-w-6xl mx-auto">
 
       <h2 className="text-2xl font-bold mb-6">Your Friends</h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-8xl mx-auto text-center">
 
         {friends.map((friend) => (
           <div
@@ -63,11 +63,11 @@ const Friends = () => {
             {/* Status */}
             <div className="mt-3">
               <span
-                className={`text-xs px-3 py-1 rounded-full text-white ${friend.status === "overdue"
-                    ? "bg-red-500"
-                    : friend.status === "almost_due"
-                      ? "bg-yellow-500"
-                      : "bg-green-600"
+                className={`text-xs px-3 py-1 rounded-full text-white ${friend.status?.toLowerCase() === "overdue"
+                  ? "bg-red-500"
+                  : friend.status?.toLowerCase().includes("almost")
+                    ? "bg-yellow-500"
+                    : "bg-green-600"
                   }`}
               >
                 {friend.status}
