@@ -26,7 +26,7 @@ const Navber = () => {
 
       {/* Logo */}
       <div className="flex-1">
-        <h1 className="text-lg md:text-xl font-semibold">
+        <h1 className="text-lg md:text-3xl font-bold">
           <span className="text-[#1F2937]">Keen</span>
           <span className="text-[#244D3F]">Keeper</span>
         </h1>

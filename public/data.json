@@ -118,29 +118,6 @@
     "bio": "Backend developer friend. Collaborate on APIs.",
     "goal": 18,
     "next_due_date": "2026-04-28"
-  },
-  {
-  "id": 11,
-  "name": "Samiha Rahman",
-  "picture": "https://randomuser.me/api/portraits/women/68.jpg",
-  "email": "samiha.rahman@example.com",
-  "days_since_contact": 6,
-  "status": "On-Track",
-  "tags": ["university friend", "classmate"],
-  "bio": "University classmate. We study and hang out during breaks.",
-  "goal": 9,
-  "next_due_date": "2026-04-21"
-},
-{
-  "id": 12,
-  "name": "Imran Hossain",
-  "picture": "https://randomuser.me/api/portraits/men/72.jpg",
-  "email": "imran.hossain@example.com",
-  "days_since_contact": 33,
-  "status": "overdue",
-  "tags": ["old colleague", "office friend"],
-  "bio": "Former office colleague. Lost contact after job change.",
-  "goal": 25,
-  "next_due_date": "2026-04-06"
-}
+  }
 ]
+  

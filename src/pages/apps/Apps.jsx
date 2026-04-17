@@ -4,17 +4,13 @@ const Apps = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState("all");
 
-  // 🔥 LIVE LOAD (IMPORTANT FIX)
   useEffect(() => {
     const loadData = () => {
-      const stored =
-        JSON.parse(localStorage.getItem("timeline")) || [];
+      const stored = JSON.parse(localStorage.getItem("timeline")) || [];
       setData(stored);
     };
 
     loadData();
-
-    // 🔥 listen for changes
     window.addEventListener("storage", loadData);
 
     return () => {
@@ -22,7 +18,6 @@ const Apps = () => {
     };
   }, []);
 
-  // filter logic
   const filteredData =
     filter === "all"
       ? data
@@ -35,13 +30,12 @@ const Apps = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen">
+    <div className="p-6 bg-gray-50">
 
       <h1 className="text-2xl font-bold mb-4">
         Timeline
       </h1>
 
-      {/* FILTER */}
       <select
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
@@ -53,29 +47,33 @@ const Apps = () => {
         <option value="video">Video</option>
       </select>
 
-      {/* LIST */}
       <div className="space-y-3">
 
-        {filteredData.map((item) => (
-          <div
-            key={item.id}
-            className="bg-white p-4 rounded shadow flex items-center gap-4"
-          >
-            <div className="text-2xl">
-              {getIcon(item.type)}
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                {item.type.toUpperCase()} with {item.name}
-              </h3>
-              <p className="text-sm text-gray-500">
-                {item.date}
-              </p>
-            </div>
-
+        {filteredData.length === 0 ? (
+          <div className="text-center py-20 text-gray-400">
+            No timeline activity yet
           </div>
-        ))}
+        ) : (
+          filteredData.map((item) => (
+            <div
+              key={item.id}
+              className="bg-white p-4 rounded shadow flex items-center gap-4"
+            >
+              <div className="text-2xl">
+                {getIcon(item.type)}
+              </div>
+
+              <div>
+                <h3 className="font-semibold">
+                  {item.type.toUpperCase()} with {item.name}
+                </h3>
+                <p className="text-sm text-gray-500">
+                  {item.date}
+                </p>
+              </div>
+            </div>
+          ))
+        )}
 
       </div>
 

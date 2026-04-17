@@ -26,6 +26,8 @@ const InstallApps = () => {
     { name: "Video", value: videoCount, color: "#22c55e" },
   ];
 
+  const total = textCount + callCount + videoCount;
+
   return (
     <div className="bg-white p-8 rounded-2xl max-w-4xl mx-auto mt-10 shadow-sm">
 
@@ -37,33 +39,39 @@ const InstallApps = () => {
         By Interaction Type
       </p>
 
-      <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
-          <Tooltip />
+      {total === 0 ? (
+        <div className="text-center py-20 text-gray-400 text-lg">
+          No interaction data yet
+        </div>
+      ) : (
+        <ResponsiveContainer width="100%" height={300}>
+          <PieChart>
+            <Tooltip />
 
-          <Pie
-            data={data}
-            cx="50%"
-            cy="50%"
-            innerRadius={60}
-            outerRadius={100}
-            paddingAngle={5}
-            dataKey="value"
-            stroke="none"
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Pie>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={60}
+              outerRadius={100}
+              paddingAngle={5}
+              dataKey="value"
+              stroke="none"
+            >
+              {data.map((entry, index) => (
+                <Cell key={index} fill={entry.color} />
+              ))}
+            </Pie>
 
-          <Legend
-            verticalAlign="bottom"
-            height={36}
-            iconType="circle"
-            iconSize={8}
-          />
-        </PieChart>
-      </ResponsiveContainer>
+            <Legend
+              verticalAlign="bottom"
+              height={36}
+              iconType="circle"
+              iconSize={8}
+            />
+          </PieChart>
+        </ResponsiveContainer>
+      )}
 
     </div>
   );
