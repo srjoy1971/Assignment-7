@@ -16,8 +16,5 @@
 -  View and manage your friends list
 -  Dashboard showing relationship statistics
 -  Track days since last contact
--  Status indicators (On-Track, Almost Due, Overdue)
--  Responsive design for mobile and desktop
-
 
 Thank You
